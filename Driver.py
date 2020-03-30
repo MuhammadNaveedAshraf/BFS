@@ -1,6 +1,7 @@
 from BFS import BFS
 from ExtractInput import *
 
+
 def main():
     # print(noOfTestCases)
     # print(noOfRules)
@@ -11,6 +12,8 @@ def main():
     #     print(test.source, end=",")
     #     print(test.destination)
     # print(transitionTable)
-    BFS();
+    BFS()
+
+
 if __name__ == '__main__':
     main()

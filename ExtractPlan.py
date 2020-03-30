@@ -4,7 +4,7 @@ from Node import *
 from ExtractInput import *
 
 
-def ExtractPlan(source,destination):
+def ExtractPlan(source, destination):
     start = Node(stateNumber(source), None)
     desti = Node(stateNumber(destination), None)
     currentState = start
@@ -18,7 +18,7 @@ def ExtractPlan(source,destination):
         frontier.append(currentState)
         while frontier.__len__() != 0 and goalFound != True:
 
-            currentState=frontier.pop(0)
+            currentState = frontier.pop(0)
             temp = searchNode(exploredSet, currentState)
             if not temp:
                 exploredSet.append(currentState)
@@ -33,12 +33,10 @@ def ExtractPlan(source,destination):
                     if not temp:
                         frontier.append(child)
 
-        if goalFound == False:
+        if not goalFound:
             print("Goal Not Found")
         else:
-            showPlan(start,currentState,exploredSet)
-
-
+            showPlan(start, currentState, exploredSet)
 
 
 def stateNumber(state):
@@ -53,6 +51,7 @@ def getchildren(parent):
         if parent != transitionTable[parent][action]:
             children.append(Node(transitionTable[parent][action], parent))
     return children
+
 
 def searchNode(exploredSet, element):
     for node in exploredSet:

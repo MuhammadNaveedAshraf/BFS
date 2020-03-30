@@ -29,7 +29,7 @@ for x in range(noOfStates):
 
 for x in range(noOfTestCases):
     line = file.readline()
-    source=line.split(' (')[0]
-    destination=line.split(') ')[1].rstrip('\n')
-    #temp = {line.split(' (')[0], line.split(') ')[1].rstrip('\n')}
+    source = line.split(' (')[0]
+    destination = line.split(') ')[1].rstrip('\n')
+    # temp = {line.split(' (')[0], line.split(') ')[1].rstrip('\n')}
     testCases.append(Test(source,destination))

@@ -1,6 +1,6 @@
 from ExtractInput import *
 from ExtractPlan import *
-#from ExtractPlan import searchNode
+# from ExtractPlan import searchNode
 
 
 def showPlan(source, destination, exploredSet):
@@ -11,13 +11,15 @@ def showPlan(source, destination, exploredSet):
 
             if currentstate.number == transitionTable[currentstate.parent][i]:
                 actionList.append(actions[i])
-                currentstate=getParent(exploredSet,currentstate)
+                currentstate = getParent(exploredSet, currentstate)
 
-        #while actionList.__len__()!=0:
-    print (actionList)
+        # while actionList.__len__()!=0:
+    while actionList:
+        print("-> ", end="")
+        print(actionList.pop(), end="",)
 
 
-def getParent(exploredSet,child):
+def getParent(exploredSet, child):
     for parent in exploredSet:
         if child.parent == parent.number:
             return parent

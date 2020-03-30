@@ -5,6 +5,7 @@ from ExtractInput import *
 class BFS:
     def __init__(self):
         for test in testCases:
+            print("Plan for ", test.source, " to ", test.destination, ":")
             ExtractPlan(test.source, test.destination)
 
 
